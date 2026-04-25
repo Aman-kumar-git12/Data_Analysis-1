@@ -6,9 +6,7 @@ export const modules = [
     id: 'blinkit',
     title: 'Blinkit Analysis',
     icon: <ShoppingBag size={20} />,
-    desc: `Built Blinkit Analysis, an optimized SKU-level dashboard for high-volume grocery datasets containing inventory churn, delivery lead times, and SKU visibility, enabling stakeholders to solve critical supply chain bottlenecks and SKU popularity issues.
-Engineered using Google Spreadsheets and advanced data modeling; built scalable pivot architectures with dynamic dataset previews, implemented optimized categorical bucketing, and created real-time KPI trackers for sales and ratings.
-Reduced operational friction via inventory optimization, streamlined fulfillment tracking through automated workflows, and enhanced decision-making with dynamic SKU-level performance insights.`,
+    desc: 'Optimizing grocery delivery operations by analyzing inventory churn, delivery lead times, and SKU popularity.',
     images: ['/blinkit/image1.png', '/blinkit/image2.png', '/blinkit/image3.png', '/blinkit/image4.png'],
     link: 'https://docs.google.com/spreadsheets/d/1Io0pxo0TJqIxs12O3CcyU1Bg4KNpm7Iy9BbnwdQz6_Q/edit?gid=0#gid=0',
     themeColor: '#ffcc00',
@@ -31,9 +29,7 @@ Reduced operational friction via inventory optimization, streamlined fulfillment
     id: 'uber-datasets',
     title: 'Uber Ride Analysis',
     icon: <Car size={20} />,
-    desc: `Built Uber Ride Analysis, a comprehensive mobility dashboard for metropolitan transit datasets containing trip IDs, geospatial coordinates, and fare amounts, enabling stakeholders to solve urban mobility trends and peak demand distribution problems.
-Engineered using Tableau and dynamic geospatial datasets; built scalable geographical mapping layers, implemented optimized trip-status workflows, and created visual insights for urban mobility across major cities with interactive trip density heatmaps.
-Reduced analysis latency via Tableau performance optimization, streamlined ride-pattern discovery through dynamic categorical filtering, and enhanced urban planning with geospatial trip density insights.`,
+    desc: 'Exploring urban mobility trends, peak demand hours, and geographical trip distribution across metropolitan areas.',
     images: ['/uber/image1.png', '/uber/image2.png'],
     link: 'pending',
     themeColor: '#ffffff',
@@ -56,11 +52,9 @@ Reduced analysis latency via Tableau performance optimization, streamlined ride-
     id: 'bank-loan',
     title: 'Bank Loan Analysis',
     icon: <Landmark size={20} />,
-    desc: `Built Bank Loan Analysis, a scalable risk assessment engine for personal lending datasets containing credit scores, annual income, and delinquency history, enabling financial institutions to solve high-risk approval and predictive credit assessment problems.
-Engineered using Python, Pandas, Matplotlib, and Seaborn; built scalable data cleaning pipelines for dynamic dataset exploration, implemented optimized credit-risk models, and created high-fidelity financial dashboards in a GitHub-inspired emerald theme.
-Reduced loan processing risk via credit-score correlation analysis, streamlined applicant screening through role-based financial profiling, and enhanced predictive accuracy with dynamic multivariate dependency mapping.`,
+    desc: 'Predictive modeling and risk assessment for personal loans, analyzing credit scores, income levels, and delinquency history.',
     images: ['/bank_loan/image1.png', '/bank_loan/image2.png', '/bank_loan/image3.png', '/bank_loan/image4.png', '/bank_loan/image5.png'],
-    link: 'https://github.com/Aman-kumar-git12/Data_Analysis-1/blob/main/notebooks/eda.ipynb',
+    link: 'https://github.com/Aman-kumar-git12/Analytica/blob/main/notebooks/eda.ipynb',
     themeColor: '#00c853',
     glowColor: 'rgba(0, 200, 83, 0.3)',
     bgColor: 'rgba(0, 200, 83, 0.03)',
@@ -81,11 +75,9 @@ Reduced loan processing risk via credit-score correlation analysis, streamlined 
     id: 'netflix-churn',
     title: 'Netflix Churn Prediction',
     icon: <Play size={20} />,
-    desc: `Built Netflix Churn Prediction, a behavioral analysis suite for subscription retention datasets containing user watch hours, subscription types, and geographic regions, enabling stakeholders to solve customer attrition and tier-based loyalty problems.
-Engineered using Python, Pandas, and Looker Studio; built scalable user behavior pipelines with dynamic watch-time segmentation, implemented optimized watch-hour modeling, and created high-fidelity dark-mode visualizations in a signature Red/Black theme.
-Reduced subscriber churn via engagement-pattern recognition, streamlined retention strategy through dynamic demographic profiling, and enhanced content decision-making with genre-based watch-time insights.`,
+    desc: 'Analyzing user behavior patterns, watch hours, and subscription types to predict and mitigate customer attrition.',
     images: ['/netflix/image1.png', '/netflix/image2.png', '/netflix/image3.png', '/netflix/image4.png', '/netflix/image5.png'],
-    link: 'https://github.com/Aman-kumar-git12/Data_Analysis-1/blob/main/notebooks/netflix.ipynb',
+    link: 'https://github.com/Aman-kumar-git12/Analytica/blob/main/notebooks/netflix.ipynb',
     themeColor: '#e50914',
     glowColor: 'rgba(229, 9, 20, 0.3)',
     bgColor: 'rgba(229, 9, 20, 0.03)',

@@ -1,4 +1,4 @@
-# <align align="center"> 📊 AnalyX – Professional Data Intelligence Suite </align>
+# <align align="center"> 📊 Analytica – Professional Data Intelligence Suite </align>
 
 <p align="center">
   <img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" />
@@ -12,7 +12,7 @@
 
 ## 🌟 Project Overview
 
-**AnalyX** is a high-performance, multi-domain data intelligence ecosystem designed to transform raw industrial datasets into actionable strategic insights. By aggregating high-volume data from **Netflix, Uber, Blinkit, and Banking** sectors, the platform provides a unified "Single Source of Truth" for complex business challenges.
+**Analytica** is a high-performance, multi-domain data intelligence ecosystem designed to transform raw industrial datasets into actionable strategic insights. By aggregating high-volume data from **Netflix, Uber, Blinkit, and Banking** sectors, the platform provides a unified "Single Source of Truth" for complex business challenges.
 
 > "Turning data noise into strategic signals through advanced visualization and predictive modeling."
 
@@ -69,8 +69,8 @@
 ### Installation
 1. **Clone the Repository**
    ```bash
-   git clone https://github.com/Aman-kumar-git12/Data_Analysis-1.git
-   cd Data_Analysis-1
+   git clone https://github.com/Aman-kumar-git12/Analytica.git
+   cd Analytica
    ```
 
 2. **Install Dependencies**
