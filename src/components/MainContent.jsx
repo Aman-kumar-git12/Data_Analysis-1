@@ -344,66 +344,6 @@ const MainContent = () => {
             className="fixed inset-0 z-[1000] flex items-center justify-center bg-black/95 backdrop-blur-3xl p-4 md:p-12"
             onClick={() => setActiveModule(null)}
           >
-            {/* Modal Navigation & Mode Switch - Square Transition */}
-            <div className="absolute top-4 left-40 flex items-center space-x-1 z-[1001] bg-[#161b22]/80 p-1 rounded-md border border-white/5 backdrop-blur-md shadow-2xl overflow-hidden">
-              <button
-                onClick={(e) => { e.stopPropagation(); setViewMode('description'); }}
-                className="px-6 py-2 rounded-sm text-xs font-black uppercase tracking-tighter transition-all flex items-center gap-2 relative z-10"
-                style={{ 
-                  color: viewMode === 'description' ? '#000000' : 'rgba(255,255,255,0.4)'
-                }}
-              >
-                {viewMode === 'description' && (
-                  <motion.div 
-                    layoutId="activePill"
-                    className="absolute inset-0 rounded-sm shadow-lg"
-                    style={{ backgroundColor: activeModule.themeColor }}
-                    transition={{ type: "spring", bounce: 0.25, duration: 0.5 }}
-                  />
-                )}
-                <span className="relative z-20 flex items-center gap-2">
-                  <FileText size={14} /> Data Desc
-                </span>
-              </button>
-              <button
-                onClick={(e) => { e.stopPropagation(); setViewMode('gallery'); }}
-                className="px-6 py-2 rounded-sm text-xs font-black uppercase tracking-tighter transition-all flex items-center gap-2 relative z-10"
-                style={{ 
-                  color: viewMode === 'gallery' ? '#000000' : 'rgba(255,255,255,0.4)'
-                }}
-              >
-                {viewMode === 'gallery' && (
-                  <motion.div 
-                    layoutId="activePill"
-                    className="absolute inset-0 rounded-sm shadow-lg"
-                    style={{ backgroundColor: activeModule.themeColor }}
-                    transition={{ type: "spring", bounce: 0.25, duration: 0.5 }}
-                  />
-                )}
-                <span className="relative z-20 flex items-center gap-2">
-                  <Monitor size={14} /> View Gallery
-                </span>
-              </button>
-              <button
-                onClick={(e) => { e.stopPropagation(); setViewMode('dataset'); }}
-                className="px-6 py-2 rounded-sm text-xs font-black uppercase tracking-tighter transition-all flex items-center gap-2 relative z-10"
-                style={{ 
-                  color: viewMode === 'dataset' ? '#000000' : 'rgba(255,255,255,0.4)'
-                }}
-              >
-                {viewMode === 'dataset' && (
-                  <motion.div 
-                    layoutId="activePill"
-                    className="absolute inset-0 rounded-sm shadow-lg"
-                    style={{ backgroundColor: activeModule.themeColor }}
-                    transition={{ type: "spring", bounce: 0.25, duration: 0.5 }}
-                  />
-                )}
-                <span className="relative z-20 flex items-center gap-2">
-                  <TableIcon size={14} /> Sample Dataset
-                </span>
-              </button>
-            </div>
 
             {/* Navigation Arrows for Gallery */}
             {viewMode === 'gallery' && activeModule.images.length > 1 && (
@@ -443,6 +383,66 @@ const MainContent = () => {
               className="relative max-w-6xl w-full h-full flex flex-col items-center justify-center"
               onClick={(e) => e.stopPropagation()}
             >
+              {/* Modal Navigation & Mode Switch - Square Transition */}
+              <div className="absolute -top-14 right-0 flex items-center space-x-1 z-[1001] bg-[#161b22]/80 p-1 rounded-md border border-white/5 backdrop-blur-md shadow-2xl overflow-hidden">
+                <button
+                  onClick={(e) => { e.stopPropagation(); setViewMode('description'); }}
+                  className="px-6 py-2 rounded-sm text-xs font-black uppercase tracking-tighter transition-all flex items-center gap-2 relative z-10"
+                  style={{ 
+                    color: viewMode === 'description' ? '#000000' : 'rgba(255,255,255,0.4)'
+                  }}
+                >
+                  {viewMode === 'description' && (
+                    <motion.div 
+                      layoutId="activePill"
+                      className="absolute inset-0 rounded-sm shadow-lg"
+                      style={{ backgroundColor: activeModule.themeColor }}
+                      transition={{ type: "spring", bounce: 0.25, duration: 0.5 }}
+                    />
+                  )}
+                  <span className="relative z-20 flex items-center gap-2">
+                    <FileText size={14} /> Data Desc
+                  </span>
+                </button>
+                <button
+                  onClick={(e) => { e.stopPropagation(); setViewMode('gallery'); }}
+                  className="px-6 py-2 rounded-sm text-xs font-black uppercase tracking-tighter transition-all flex items-center gap-2 relative z-10"
+                  style={{ 
+                    color: viewMode === 'gallery' ? '#000000' : 'rgba(255,255,255,0.4)'
+                  }}
+                >
+                  {viewMode === 'gallery' && (
+                    <motion.div 
+                      layoutId="activePill"
+                      className="absolute inset-0 rounded-sm shadow-lg"
+                      style={{ backgroundColor: activeModule.themeColor }}
+                      transition={{ type: "spring", bounce: 0.25, duration: 0.5 }}
+                    />
+                  )}
+                  <span className="relative z-20 flex items-center gap-2">
+                    <Monitor size={14} /> View Gallery
+                  </span>
+                </button>
+                <button
+                  onClick={(e) => { e.stopPropagation(); setViewMode('dataset'); }}
+                  className="px-6 py-2 rounded-sm text-xs font-black uppercase tracking-tighter transition-all flex items-center gap-2 relative z-10"
+                  style={{ 
+                    color: viewMode === 'dataset' ? '#000000' : 'rgba(255,255,255,0.4)'
+                  }}
+                >
+                  {viewMode === 'dataset' && (
+                    <motion.div 
+                      layoutId="activePill"
+                      className="absolute inset-0 rounded-sm shadow-lg"
+                      style={{ backgroundColor: activeModule.themeColor }}
+                      transition={{ type: "spring", bounce: 0.25, duration: 0.5 }}
+                    />
+                  )}
+                  <span className="relative z-20 flex items-center gap-2">
+                    <TableIcon size={14} /> Sample Dataset
+                  </span>
+                </button>
+              </div>
               <div className="relative w-full h-[70vh] flex items-center justify-center overflow-hidden rounded-2xl border border-[#30363d] bg-[#0d1117] shadow-2xl">
                 <AnimatePresence mode="wait">
                   {viewMode === 'description' ? (
