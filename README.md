@@ -1,100 +1,69 @@
-# <align align="center"> 📊 Analytica – Professional Data Intelligence Suite </align>
+# <align align="center"> 📊 Analytica – Data Science & Analytical Intelligence Portfolio </align>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" />
-  <img src="https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white" />
   <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" />
   <img src="https://img.shields.io/badge/Pandas-150458?style=for-the-badge&logo=pandas&logoColor=white" />
   <img src="https://img.shields.io/badge/Tableau-E97627?style=for-the-badge&logo=tableau&logoColor=white" />
+  <img src="https://img.shields.io/badge/Matplotlib-ffffff?style=for-the-badge&logo=matplotlib&logoColor=black" />
+  <img src="https://img.shields.io/badge/Seaborn-444876?style=for-the-badge&logo=seaborn&logoColor=white" />
 </p>
 
 ---
 
-## 🌟 Project Overview
+## 🌟 Portfolio Overview
 
-**Analytica** is a high-performance, multi-domain data intelligence ecosystem designed to transform raw industrial datasets into actionable strategic insights. By aggregating high-volume data from **Netflix, Uber, Blinkit, and Banking** sectors, the platform provides a unified "Single Source of Truth" for complex business challenges.
+**Analytica** is a specialized data science repository focused on extracting high-value business intelligence from industrial datasets. This portfolio demonstrates the end-to-end analytical lifecycle: from **raw data ingestion and cleaning** to **exploratory data analysis (EDA)** and **strategic visualization**.
 
-> "Turning data noise into strategic signals through advanced visualization and predictive modeling."
-
----
-
-## 🚀 Key Features
-
-- **🌐 Multi-Domain Aggregation**: Seamless integration of cross-industry datasets including Fintech, E-commerce, and Urban Mobility.
-- **📈 Professional Dashboarding**: High-fidelity dark-mode interfaces featuring domain-specific branding (GitHub-Emerald, Netflix-Red).
-- **⚡ Dynamic Data Engine**: Real-time dataset previews and interactive filtering for deep-dive analysis.
-- **🗺️ Geospatial Intelligence**: Advanced heatmapping for urban mobility and demand distribution.
-- **🤖 Predictive Workflows**: Automated churn prediction and risk assessment modeling using Python & Pandas.
+> "Transforming complex datasets into clear, actionable business narratives through statistical rigor and visual clarity."
 
 ---
 
-## 🛠️ Technology Stack
+## 🔬 Analytical Modules & Methodologies
 
-| Layer | Technologies |
-| :--- | :--- |
-| **Frontend** | React 18, Vite, Tailwind CSS, Framer Motion |
-| **Data Engine** | Python 3.x, Pandas, NumPy |
-| **Visualization** | Matplotlib, Seaborn, Tableau, Looker Studio |
-| **Infrastructure** | GitHub Actions, Vercel, MongoDB |
+Each module represents a deep-dive into a specific business domain, utilizing industry-standard tools to solve core operational problems.
 
----
-
-## 📂 Project Modules
-
-| Module | Core Problem Solved | Data Focus | Tooling |
+| Module | Analytical Focus | Methodologies Used | Tooling |
 | :--- | :--- | :--- | :--- |
-| **🏦 Bank Loan** | Credit Risk & Default Prediction | Income, Credit Score, Delinquency | Python, Pandas |
-| **🍿 Netflix** | User Retention & Churn Mitigation | Watch Hours, Regional Loyalty | Python, Pandas |
-| **🚗 Uber** | Urban Mobility & Demand Allocation | Geospatial Trip IDs, Fare Density | Tableau |
-| **🛍️ Blinkit** | Inventory Churn & SKU Popularity | SKUs, Delivery Lead Times | Spreadsheet |
+| **🏦 Bank Loan** | **Credit Risk Profiling** | Correlation Heatmapping, Distribution Analysis, Feature Importance | Python, Pandas, Seaborn |
+| **🍿 Netflix** | **Retention Analytics** | Churn Prediction modeling, Behavioral segmentation, Tenure analysis | Python, Pandas, Matplotlib |
+| **🚗 Uber** | **Demand Intelligence** | Geospatial trip distribution, Peak-hour density mapping | Tableau, Geospatial Analysis |
+| **🛍️ Blinkit** | **Inventory Optimization** | SKU Popularity metrics, Lead-time variance analysis, Churn tracking | Spreadsheet, Statistical modeling |
 
 ---
 
-## 📸 Interface Preview
+## 🛠️ Data Intelligence Stack
 
-<p align="center">
-  <img src="public/bank_loan/image5.png" width="45%" />
-  <img src="public/netflix/image1.png" width="45%" />
-</p>
+### **Data Processing & Engineering**
+- **Python (Pandas/NumPy)**: Primary engine for data cleaning, handling missing values, and feature engineering.
+- **ETL Pipelines**: Transformation of raw CSV/JSON logs into structured analytical schemas.
 
----
+### **Exploratory Data Analysis (EDA)**
+- **Statistical Profiling**: Analyzing skewness, kurtosis, and variance across financial and behavioral metrics.
+- **Correlation Mapping**: Identifying non-obvious relationships between variables (e.g., *Credit Score vs. Monthly Debt*).
 
-## 🛠️ Getting Started
-
-### Prerequisites
-- Node.js (v18+)
-- Python 3.10+
-- npm or yarn
-
-### Installation
-1. **Clone the Repository**
-   ```bash
-   git clone https://github.com/Aman-kumar-git12/Analytica.git
-   cd Analytica
-   ```
-
-2. **Install Dependencies**
-   ```bash
-   npm install
-   ```
-
-3. **Run Dev Server**
-   ```bash
-   npm run dev
-   ```
+### **Visual Intelligence**
+- **Matplotlib/Seaborn**: High-fidelity statistical plotting with custom-branded themes (e.g., GitHub-Emerald, Netflix-Red).
+- **Tableau**: Interactive geospatial dashboards for urban mobility and logistics tracking.
 
 ---
 
-## 🏗️ Architecture
+## 🏗️ Analytical Workflow
 
 ```mermaid
-graph TD
-    A[Raw Data Source] -->|Python/Pandas| B[Cleaned JSON/CSV]
-    B --> C[Vite Frontend Engine]
-    C --> D[Domain Specific Dashboards]
-    D --> E[Interactive Visualization]
-    D --> F[Dataset Explorer]
+graph LR
+    A[Raw Datasets] -->|ETL / Pandas| B[Feature Engineering]
+    B --> C[Statistical EDA]
+    C --> D[Predictive Insights]
+    D --> E[Executive Dashboards]
 ```
+
+---
+
+## 📂 Project Structure
+
+- **`datasets/`**: Curated industrial datasets (Banking, OTT, Logistics, Mobility).
+- **`notebooks/`**: Comprehensive Jupyter notebooks containing the core EDA and modeling logic.
+- **`src/`**: Interactive showcase interface built for data presentation.
 
 ---
 
@@ -105,4 +74,4 @@ graph TD
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/aman-kumar)
 
 ---
-<p align="center"> Built with ❤️ for the Data Science Community </p>
+<p align="center"> Dedicated to turning data noise into strategic signals. </p>
