@@ -582,7 +582,8 @@ const MainContent = () => {
                           Showing first 5 rows (Scroll right for all columns) →
                         </div>
                       </div>
-                    </motion.div>
+                    </div>
+                  </motion.div>
                   )}
                 </AnimatePresence>
               </div>
