@@ -289,7 +289,7 @@ const MainContent = () => {
                       </div>
                     </div>
 
-                    <p className="text-[15px] text-[#8b949e] leading-relaxed relative z-10 group-hover:text-[#c9d1d9] transition-colors mb-4">{module.desc}</p>
+                    <p className="text-[15px] text-[#8b949e] leading-relaxed relative z-10 group-hover:text-[#c9d1d9] transition-colors mb-4 line-clamp-3 min-h-[4.5rem]">{module.desc}</p>
 
                     {/* Tech Stack Badges */}
                     <div className="flex flex-wrap gap-2 relative z-10 mb-6">
@@ -453,18 +453,22 @@ const MainContent = () => {
                       exit={{ opacity: 0, x: 20 }}
                       className="w-full h-full p-8 md:p-12 overflow-auto custom-scrollbar bg-[#0d1117]"
                     >
-                      <div className="max-w-6xl mx-auto">
-                        <div className="flex items-center gap-6 mb-12">
-                          <div className="p-6 rounded-2xl bg-white/5 border border-white/10 shadow-2xl">
-                            <div className="text-6xl">{activeModule.logo}</div>
-                          </div>
-                          <div>
-                            <h2 className="text-5xl font-black text-white tracking-tighter mb-2">{activeModule.title}</h2>
-                            <div className="flex gap-3">
-                              {activeModule.stack.map(s => (
-                                <span key={s} className="px-3 py-1 bg-white/5 rounded-full border border-white/10 text-white/60 text-xs font-bold uppercase tracking-widest">{s}</span>
-                              ))}
+                      <div className="max-w-6xl mx-auto w-full">
+                        {/* Standardized Header */}
+                        <div className="flex items-center justify-between mb-12">
+                          <div className="flex items-center gap-6">
+                            <div className="p-5 rounded-2xl bg-white/5 border border-white/10 shadow-2xl">
+                              <div className="text-5xl">{activeModule.logo}</div>
                             </div>
+                            <div>
+                              <h2 className="text-4xl font-black text-white tracking-tighter mb-2">{activeModule.title}</h2>
+                              <p className="text-[#8b949e] text-sm font-medium uppercase tracking-[0.2em]">Project Overview & Insights</p>
+                            </div>
+                          </div>
+                          <div className="flex gap-2">
+                            {activeModule.stack.map(s => (
+                              <span key={s} className="px-3 py-1 bg-white/5 rounded-full border border-white/10 text-white/60 text-[10px] font-bold uppercase tracking-widest">{s}</span>
+                            ))}
                           </div>
                         </div>
 
@@ -510,19 +514,43 @@ const MainContent = () => {
                       </div>
                     </motion.div>
                   ) : viewMode === 'gallery' ? (
-                    <div className="w-full h-full p-8 md:p-12 flex items-center justify-center bg-[#0d1117]">
-                      <motion.img
-                        key={imageIndex}
-                        custom={direction}
-                        variants={slideVariants}
-                        initial="enter"
-                        animate="center"
-                        exit="exit"
-                        src={activeModule.images[imageIndex]}
-                        alt={`${activeModule.title} ${imageIndex + 1}`}
-                        className="max-w-full max-h-full object-contain pointer-events-none rounded-xl shadow-2xl"
-                      />
+                    <div className="w-full h-full p-8 md:p-12 flex flex-col bg-[#0d1117] overflow-hidden">
+                      <div className="max-w-6xl mx-auto w-full h-full flex flex-col">
+                        {/* Standardized Header */}
+                        <div className="flex items-center justify-between mb-8 flex-shrink-0">
+                          <div className="flex items-center gap-4">
+                            <div className="p-3 rounded-xl bg-white/5 border border-white/10">
+                              <div className="text-2xl">{activeModule.logo}</div>
+                            </div>
+                            <div>
+                              <h2 className="text-2xl font-black text-white tracking-tighter">{activeModule.title} Visuals</h2>
+                              <p className="text-[#8b949e] text-[10px] font-medium uppercase tracking-[0.2em]">Interface & Dashboard Gallery</p>
+                            </div>
+                          </div>
+                          <div className="flex gap-2">
+                            {activeModule.stack.map(s => (
+                              <span key={s} className="px-3 py-1 bg-white/5 rounded-full border border-white/10 text-white/40 text-[9px] font-bold uppercase tracking-widest">{s}</span>
+                            ))}
+                          </div>
+                        </div>
+
+                        {/* Framed Image Container for Consistency */}
+                        <div className="flex-grow flex items-center justify-center bg-black/20 rounded-2xl border border-white/5 overflow-hidden relative group">
+                          <motion.img
+                            key={imageIndex}
+                            custom={direction}
+                            variants={slideVariants}
+                            initial="enter"
+                            animate="center"
+                            exit="exit"
+                            src={activeModule.images[imageIndex]}
+                            alt={`${activeModule.title} ${imageIndex + 1}`}
+                            className="max-w-full max-h-full object-contain pointer-events-none p-4"
+                          />
+                        </div>
+                      </div>
                     </div>
+                  ) : (
                     <motion.div
                       key="dataset"
                       initial={{ opacity: 0, scale: 0.9, filter: 'blur(10px)' }}
@@ -531,17 +559,24 @@ const MainContent = () => {
                       transition={{ duration: 0.4, ease: "easeOut" }}
                       className="w-full h-full p-8 md:p-12 overflow-auto custom-scrollbar bg-[#0d1117]"
                     >
-                      <div className="max-w-6xl mx-auto">
-                      <div className="flex items-center justify-between mb-8">
-                        <h3 className="text-2xl font-bold text-white flex items-center gap-3">
-                          <Database style={{ color: activeModule.themeColor }} /> {activeModule.title} Raw Data Preview
-                        </h3>
-                        <div className="flex gap-2">
-                          {activeModule.stack.map(s => (
-                            <span key={s} className="text-[10px] px-2 py-1 bg-white/5 rounded border border-white/10 text-white/50 uppercase font-bold tracking-widest">{s}</span>
-                          ))}
+                      <div className="max-w-6xl mx-auto w-full">
+                        {/* Standardized Header */}
+                        <div className="flex items-center justify-between mb-8">
+                          <div className="flex items-center gap-4">
+                            <div className="p-3 rounded-xl bg-white/5 border border-white/10">
+                              <Database size={24} style={{ color: activeModule.themeColor }} />
+                            </div>
+                            <div>
+                              <h2 className="text-2xl font-black text-white tracking-tighter">{activeModule.title} Raw Data</h2>
+                              <p className="text-[#8b949e] text-[10px] font-medium uppercase tracking-[0.2em]">Sample Dataset Preview</p>
+                            </div>
+                          </div>
+                          <div className="flex gap-2">
+                            {activeModule.stack.map(s => (
+                              <span key={s} className="px-3 py-1 bg-white/5 rounded-full border border-white/10 text-white/40 text-[9px] font-bold uppercase tracking-widest">{s}</span>
+                            ))}
+                          </div>
                         </div>
-                      </div>
 
                       <div className="overflow-x-auto rounded-xl border border-[#30363d] custom-scrollbar">
                         <table className="w-full text-left border-collapse min-w-[1200px]">

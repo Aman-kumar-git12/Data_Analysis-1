@@ -55,11 +55,11 @@ region_churn.plot(kind='barh', color=NETFLIX_RED, edgecolor='white')
 plt.title('Regional Market Risk (%)', fontsize=18, color=NETFLIX_RED)
 plt.savefig('public/netflix/image4.png', dpi=120, bbox_inches='tight')
 
-# 5. Genre Analysis (Keeping it for variety)
+# 5. Genre Analysis
 plt.figure(figsize=(12, 7))
-sns.barplot(data=df, x='favorite_genre', y='churned', palette=[NETFLIX_RED], ci=None)
+sns.barplot(data=df, x='favorite_genre', y='churned', color=NETFLIX_RED, errorbar=None)
 plt.title('Churn Risk by Favorite Genre', fontsize=18, color=NETFLIX_RED)
 plt.xticks(rotation=45)
 plt.savefig('public/netflix/image5.png', dpi=120, bbox_inches='tight')
 
-print("Netflix images updated with scatter plot.")
+print("All 5 Netflix images updated successfully.")
