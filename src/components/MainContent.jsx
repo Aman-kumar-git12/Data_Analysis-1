@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { 
   Edit2, BarChart2, PieChart, Map, Clock, Users, X, 
   ChevronLeft, ChevronRight, Layout, ExternalLink, 
-  ShoppingBag, UserCircle, Car, Database, Layers, 
+  ShoppingBag, UserCircle, Car, Database, Layers, Target, FileText,
   Table as TableIcon, FileSpreadsheet, Monitor, Landmark, Play,
   Menu, Github, Search, Plus, CircleDot, GitPullRequest, BookOpen, Inbox
 } from 'lucide-react';
@@ -14,7 +14,7 @@ const MainContent = () => {
   const [activeModule, setActiveModule] = useState(null);
   const [imageIndex, setImageIndex] = useState(0);
   const [direction, setDirection] = useState(0);
-  const [viewMode, setViewMode] = useState('gallery'); // 'gallery' or 'dataset'
+  const [viewMode, setViewMode] = useState('gallery'); // 'description', 'gallery', or 'dataset'
   const showSnackbar = useSnackbar();
 
   const modules = [
@@ -344,11 +344,30 @@ const MainContent = () => {
             className="fixed inset-0 z-[1000] flex items-center justify-center bg-black/95 backdrop-blur-3xl p-4 md:p-12"
             onClick={() => setActiveModule(null)}
           >
-            {/* Modal Navigation & Mode Switch - Liquid Pill Transition */}
-            <div className="absolute top-4 left-40 flex items-center space-x-1 z-[1001] bg-[#161b22]/50 p-1 rounded-full border border-white/5 backdrop-blur-md shadow-2xl overflow-hidden">
+            {/* Modal Navigation & Mode Switch - Square Transition */}
+            <div className="absolute top-4 left-40 flex items-center space-x-1 z-[1001] bg-[#161b22]/80 p-1 rounded-md border border-white/5 backdrop-blur-md shadow-2xl overflow-hidden">
+              <button
+                onClick={(e) => { e.stopPropagation(); setViewMode('description'); }}
+                className="px-6 py-2 rounded-sm text-xs font-black uppercase tracking-tighter transition-all flex items-center gap-2 relative z-10"
+                style={{ 
+                  color: viewMode === 'description' ? '#000000' : 'rgba(255,255,255,0.4)'
+                }}
+              >
+                {viewMode === 'description' && (
+                  <motion.div 
+                    layoutId="activePill"
+                    className="absolute inset-0 rounded-sm shadow-lg"
+                    style={{ backgroundColor: activeModule.themeColor }}
+                    transition={{ type: "spring", bounce: 0.25, duration: 0.5 }}
+                  />
+                )}
+                <span className="relative z-20 flex items-center gap-2">
+                  <FileText size={14} /> Data Desc
+                </span>
+              </button>
               <button
                 onClick={(e) => { e.stopPropagation(); setViewMode('gallery'); }}
-                className="px-6 py-2 rounded-full text-xs font-black uppercase tracking-tighter transition-all flex items-center gap-2 relative z-10"
+                className="px-6 py-2 rounded-sm text-xs font-black uppercase tracking-tighter transition-all flex items-center gap-2 relative z-10"
                 style={{ 
                   color: viewMode === 'gallery' ? '#000000' : 'rgba(255,255,255,0.4)'
                 }}
@@ -356,7 +375,7 @@ const MainContent = () => {
                 {viewMode === 'gallery' && (
                   <motion.div 
                     layoutId="activePill"
-                    className="absolute inset-0 rounded-full shadow-lg"
+                    className="absolute inset-0 rounded-sm shadow-lg"
                     style={{ backgroundColor: activeModule.themeColor }}
                     transition={{ type: "spring", bounce: 0.25, duration: 0.5 }}
                   />
@@ -367,7 +386,7 @@ const MainContent = () => {
               </button>
               <button
                 onClick={(e) => { e.stopPropagation(); setViewMode('dataset'); }}
-                className="px-6 py-2 rounded-full text-xs font-black uppercase tracking-tighter transition-all flex items-center gap-2 relative z-10"
+                className="px-6 py-2 rounded-sm text-xs font-black uppercase tracking-tighter transition-all flex items-center gap-2 relative z-10"
                 style={{ 
                   color: viewMode === 'dataset' ? '#000000' : 'rgba(255,255,255,0.4)'
                 }}
@@ -375,7 +394,7 @@ const MainContent = () => {
                 {viewMode === 'dataset' && (
                   <motion.div 
                     layoutId="activePill"
-                    className="absolute inset-0 rounded-full shadow-lg"
+                    className="absolute inset-0 rounded-sm shadow-lg"
                     style={{ backgroundColor: activeModule.themeColor }}
                     transition={{ type: "spring", bounce: 0.25, duration: 0.5 }}
                   />
@@ -426,7 +445,71 @@ const MainContent = () => {
             >
               <div className="relative w-full h-[70vh] flex items-center justify-center overflow-hidden rounded-2xl border border-[#30363d] bg-[#0d1117] shadow-2xl">
                 <AnimatePresence mode="wait">
-                  {viewMode === 'gallery' ? (
+                  {viewMode === 'description' ? (
+                    <motion.div
+                      key="description"
+                      initial={{ opacity: 0, x: -20 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      exit={{ opacity: 0, x: 20 }}
+                      className="w-full h-full p-12 overflow-auto custom-scrollbar bg-[#0d1117]"
+                    >
+                      <div className="max-w-4xl mx-auto">
+                        <div className="flex items-center gap-6 mb-12">
+                          <div className="p-6 rounded-2xl bg-white/5 border border-white/10 shadow-2xl">
+                             <div className="text-6xl">{activeModule.logo}</div>
+                          </div>
+                          <div>
+                            <h2 className="text-5xl font-black text-white tracking-tighter mb-2">{activeModule.title}</h2>
+                            <div className="flex gap-3">
+                              {activeModule.stack.map(s => (
+                                <span key={s} className="px-3 py-1 bg-white/5 rounded-full border border-white/10 text-white/60 text-xs font-bold uppercase tracking-widest">{s}</span>
+                              ))}
+                            </div>
+                          </div>
+                        </div>
+
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mt-12">
+                          <div className="space-y-8">
+                            <section>
+                              <h4 className="text-[#8b949e] uppercase text-[10px] font-black tracking-[0.2em] mb-4 flex items-center gap-2">
+                                <BookOpen size={14} /> Project Overview
+                              </h4>
+                              <p className="text-xl text-[#c9d1d9] leading-relaxed font-light">
+                                {activeModule.desc}
+                              </p>
+                            </section>
+                            
+                            <section>
+                              <h4 className="text-[#8b949e] uppercase text-[10px] font-black tracking-[0.2em] mb-4 flex items-center gap-2">
+                                <Target size={14} /> Key Objective
+                              </h4>
+                              <p className="text-[#c9d1d9] leading-relaxed">
+                                To derive actionable insights from the {activeModule.title.toLowerCase()} through advanced data visualization, statistical modeling, and pattern recognition techniques.
+                              </p>
+                            </section>
+                          </div>
+
+                          <div className="bg-[#161b22]/50 p-8 rounded-2xl border border-[#30363d] h-fit">
+                            <h4 className="text-[#8b949e] uppercase text-[10px] font-black tracking-[0.2em] mb-6 flex items-center gap-2">
+                              <Layers size={14} /> Dataset Schema
+                            </h4>
+                            <div className="flex flex-wrap gap-2">
+                              {activeModule.sampleData.columns.slice(0, 15).map(col => (
+                                <div key={col} className="px-3 py-2 bg-[#0d1117] rounded border border-[#30363d] text-[#c9d1d9] text-[10px] font-mono hover:border-[#f78166]/50 transition-colors">
+                                  {col}
+                                </div>
+                              ))}
+                              {activeModule.sampleData.columns.length > 15 && (
+                                <div className="px-3 py-2 bg-[#0d1117] rounded border border-[#30363d] text-white/30 text-[10px] font-mono">
+                                  +{activeModule.sampleData.columns.length - 15} more fields...
+                                </div>
+                              )}
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </motion.div>
+                  ) : viewMode === 'gallery' ? (
                     <motion.img
                       key={imageIndex}
                       custom={direction}
@@ -445,7 +528,7 @@ const MainContent = () => {
                       animate={{ opacity: 1, scale: 1, filter: 'blur(0px)' }}
                       exit={{ opacity: 0, scale: 1.1, filter: 'blur(10px)' }}
                       transition={{ duration: 0.4, ease: "easeOut" }}
-                      className="w-full h-full p-8 overflow-auto custom-scrollbar"
+                      className="w-full h-full p-8 overflow-auto custom-scrollbar bg-[#0d1117]"
                     >
                       <div className="flex items-center justify-between mb-8">
                         <h3 className="text-2xl font-bold text-white flex items-center gap-3">
