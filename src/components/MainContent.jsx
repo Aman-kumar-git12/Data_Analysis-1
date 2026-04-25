@@ -30,13 +30,13 @@ const MainContent = () => {
       logo: '🛍️',
       stack: ['Spreadsheet'],
       sampleData: {
-        columns: ['Item Fat', 'ID', 'Type', 'Year', 'Outlet', 'Location', 'Size', 'Sales', 'Rating'],
+        columns: ['Item Fat Content', 'Item Identifier', 'Item Type', 'Outlet Establishment Year', 'Outlet Identifier', 'Outlet Location Type', 'Outlet Size', 'Outlet Type', 'Item Visibility', 'Item Weight', 'Sales', 'Rating'],
         rows: [
-          ['Regular', 'FDX32', 'Fruits/Veg', '2012', 'OUT049', 'Tier 1', 'Medium', '145.47', '5'],
-          ['Low Fat', 'NCB42', 'Health', '2022', 'OUT018', 'Tier 3', 'Medium', '115.34', '5'],
-          ['Regular', 'FDR28', 'Frozen', '2016', 'OUT046', 'Tier 1', 'Small', '165.02', '5'],
-          ['Regular', 'FDL50', 'Canned', '2014', 'OUT013', 'Tier 3', 'High', '126.50', '5'],
-          ['Low Fat', 'DRI25', 'Soft Drinks', '2015', 'OUT045', 'Tier 2', 'Small', '55.16', '5']
+          ['Regular', 'FDX32', 'Fruits and Vegetables', '2012', 'OUT049', 'Tier 1', 'Medium', 'Supermarket Type1', '0.1000135', '15.1', '145.479', '5'],
+          ['Low Fat', 'NCB42', 'Health and Hygiene', '2022', 'OUT018', 'Tier 3', 'Medium', 'Supermarket Type2', '0.008596051', '11.8', '115.349', '5'],
+          ['Regular', 'FDR28', 'Frozen Foods', '2016', 'OUT046', 'Tier 1', 'Small', 'Supermarket Type1', '0.025896485', '13.85', '165.021', '5'],
+          ['Regular', 'FDL50', 'Canned', '2014', 'OUT013', 'Tier 3', 'High', 'Supermarket Type1', '0.042277867', '12.15', '126.505', '5'],
+          ['Low Fat', 'DRI25', 'Soft Drinks', '2015', 'OUT045', 'Tier 2', 'Small', 'Supermarket Type1', '0.033970195', '19.6', '55.1614', '5']
         ]
       }
     },
@@ -53,13 +53,13 @@ const MainContent = () => {
       logo: '🚗',
       stack: ['Tableau'],
       sampleData: {
-        columns: ['Trip ID', 'Driver ID', 'City', 'Dist (km)', 'Fare', 'Status', 'Method', 'Pickup Time'],
+        columns: ['trip_id', 'driver_id', 'rider_id', 'city', 'pickup_lat', 'pickup_lng', 'drop_lat', 'drop_lng', 'distance_km', 'fare_amount', 'status', 'payment_method', 'pickup_time', 'drop_time'],
         rows: [
-          ['1', '8270', 'San Francisco', '2.97', '10.71', 'Completed', 'Wallet', '2023-01-01 00:00'],
-          ['2', '1860', 'Boston', '8.43', '22.41', 'Completed', 'UPI', '2023-01-01 00:01'],
-          ['3', '6390', 'San Francisco', '5.46', '12.91', 'Completed', 'Cash', '2023-01-01 00:02'],
-          ['4', '6191', 'New York', '6.61', '15.70', 'Completed', 'Wallet', '2023-01-01 00:03'],
-          ['5', '6734', 'Seattle', '10.50', '19.15', 'Completed', 'Wallet', '2023-01-01 00:04']
+          ['1', '8270', '10683', 'San Francisco', '37.17093', '-77.5864', '37.17365', '-77.6199', '2.97', '10.71', 'Completed', 'Wallet', '2023-01-01 00:00:00', '2023-01-01 00:08:54'],
+          ['2', '1860', '44743', 'Boston', '38.89812', '-108.582', '38.93746', '-108.558', '8.43', '22.41', 'Completed', 'UPI', '2023-01-01 00:01:00', '2023-01-01 00:26:17'],
+          ['3', '6390', '75839', 'San Francisco', '38.81457', '-89.9426', '38.82170', '-89.8964', '5.46', '12.91', 'Completed', 'Cash', '2023-01-01 00:02:00', '2023-01-01 00:18:22'],
+          ['4', '6191', '22189', 'New York', '37.29590', '-75.3288', '37.30137', '-75.3174', '6.61', '15.7', 'Completed', 'Wallet', '2023-01-01 00:03:00', '2023-01-01 00:22:49'],
+          ['5', '6734', '61104', 'Seattle', '38.97239', '-121.482', '38.99208', '-121.467', '10.5', '19.15', 'Completed', 'Wallet', '2023-01-01 00:04:00', '2023-01-01 00:35:30']
         ]
       }
     },
@@ -76,13 +76,13 @@ const MainContent = () => {
       logo: '🏦',
       stack: ['Python', 'Pandas'],
       sampleData: {
-        columns: ['Loan ID', 'Term', 'Credit Score', 'Annual Income', 'Home Ownership', 'Purpose', 'Monthly Debt', 'Open Accounts'],
+        columns: ['Loan ID', 'Customer ID', 'Current Loan Amount', 'Term', 'Credit Score', 'Annual Income', 'Years in current job', 'Home Ownership', 'Purpose', 'Monthly Debt', 'Years of Credit History', 'Number of Open Accounts'],
         rows: [
-          ['f738779f...', 'Short Term', '747', '2,074,116', 'Mortgage', 'Debt Consolidation', '42,000', '9'],
-          ['6dcc0947...', 'Short Term', '734', '1,919,190', 'Mortgage', 'Debt Consolidation', '36,624', '11'],
-          ['f7744d01...', 'Short Term', '709', '871,112', 'Rent', 'Debt Consolidation', '8,391', '10'],
-          ['83721ffb...', 'Short Term', '727', '780,083', 'Rent', 'Debt Consolidation', '16,771', '16'],
-          ['08f3789f...', 'Short Term', '744', '1,761,148', 'Mortgage', 'Debt Consolidation', '39,478', '14']
+          ['f738779f...', 'ded0b3c3...', '611314', 'Short Term', '747', '2074116', '10+ years', 'Home Mortgage', 'Debt Consolidation', '42000.83', '21.8', '9'],
+          ['6dcc0947...', '1630e6e3...', '266662', 'Short Term', '734', '1919190', '10+ years', 'Home Mortgage', 'Debt Consolidation', '36624.4', '19.4', '11'],
+          ['f7744d01...', '2c60938b...', '153494', 'Short Term', '709', '871112', '2 years', 'Rent', 'Debt Consolidation', '8391.73', '12.5', '10'],
+          ['83721ffb...', '12116614...', '176242', 'Short Term', '727', '780083', '10+ years', 'Rent', 'Debt Consolidation', '16771.87', '16.5', '16'],
+          ['08f3789f...', '39888105...', '321992', 'Short Term', '744', '1761148', '10+ years', 'Home Mortgage', 'Debt Consolidation', '39478.77', '26', '14']
         ]
       }
     },
@@ -99,13 +99,13 @@ const MainContent = () => {
       logo: '🍿',
       stack: ['Looker Studio'],
       sampleData: {
-        columns: ['Customer ID', 'Age', 'Subscription', 'Watch Hours', 'Region', 'Monthly Fee', 'Churned', 'Favorite Genre'],
+        columns: ['customer_id', 'age', 'gender', 'subscription_type', 'watch_hours', 'last_login_days', 'region', 'device', 'monthly_fee', 'churned', 'payment_method', 'favorite_genre'],
         rows: [
-          ['a9b75100...', '51', 'Basic', '14.73', 'Africa', '8.99', '1 (Yes)', 'Action'],
-          ['49a5dfd9...', '47', 'Standard', '0.70', 'Europe', '13.99', '1 (Yes)', 'Sci-Fi'],
-          ['4d71f6ce...', '27', 'Standard', '16.32', 'Asia', '13.99', '0 (No)', 'Drama'],
-          ['d3c72c38...', '53', 'Premium', '4.51', 'Oceania', '17.99', '1 (Yes)', 'Horror'],
-          ['4e265c34...', '56', 'Standard', '1.89', 'Africa', '13.99', '1 (Yes)', 'Action']
+          ['a9b75100...', '51', 'Other', 'Basic', '14.73', '29', 'Africa', 'TV', '8.99', '1', 'Gift Card', 'Action'],
+          ['49a5dfd9...', '47', 'Other', 'Standard', '0.7', '19', 'Europe', 'Mobile', '13.99', '1', 'Gift Card', 'Sci-Fi'],
+          ['4d71f6ce...', '27', 'Female', 'Standard', '16.32', '10', 'Asia', 'TV', '13.99', '0', 'Crypto', 'Drama'],
+          ['d3c72c38...', '53', 'Other', 'Premium', '4.51', '12', 'Oceania', 'TV', '17.99', '1', 'Crypto', 'Horror'],
+          ['4e265c34...', '56', 'Other', 'Standard', '1.89', '13', 'Africa', 'Mobile', '13.99', '1', 'Crypto', 'Action']
         ]
       }
     }
@@ -397,7 +397,7 @@ const MainContent = () => {
                       animate={{ opacity: 1, scale: 1, filter: 'blur(0px)' }}
                       exit={{ opacity: 0, scale: 1.1, filter: 'blur(10px)' }}
                       transition={{ duration: 0.4, ease: "easeOut" }}
-                      className="w-full h-full p-8 overflow-auto"
+                      className="w-full h-full p-8 overflow-auto custom-scrollbar"
                     >
                       <div className="flex items-center justify-between mb-8">
                         <h3 className="text-2xl font-bold text-white flex items-center gap-3">
@@ -410,12 +410,12 @@ const MainContent = () => {
                         </div>
                       </div>
 
-                      <div className="overflow-x-auto rounded-xl border border-[#30363d]">
-                        <table className="w-full text-left border-collapse min-w-[800px]">
+                      <div className="overflow-x-auto rounded-xl border border-[#30363d] custom-scrollbar">
+                        <table className="w-full text-left border-collapse min-w-[1200px]">
                           <thead>
                             <tr className="bg-[#161b22]">
                               {activeModule.sampleData.columns.map((col) => (
-                                <th key={col} className="px-6 py-4 text-xs font-black uppercase tracking-tighter text-[#8b949e] border-b border-[#30363d]">
+                                <th key={col} className="px-6 py-4 text-[11px] font-black uppercase tracking-wider text-[#8b949e] border-b border-[#30363d] whitespace-nowrap">
                                   {col}
                                 </th>
                               ))}
@@ -425,7 +425,7 @@ const MainContent = () => {
                             {activeModule.sampleData.rows.map((row, idx) => (
                               <tr key={idx} className="hover:bg-white/5 transition-colors border-b border-[#30363d]/50">
                                 {row.map((cell, cidx) => (
-                                  <td key={cidx} className="px-6 py-4 text-sm font-mono text-[#c9d1d9]">
+                                  <td key={cidx} className="px-6 py-4 text-sm font-mono text-[#c9d1d9] whitespace-nowrap">
                                     {cell}
                                   </td>
                                 ))}
@@ -446,7 +446,7 @@ const MainContent = () => {
                           </div>
                         </div>
                         <div className="text-xs font-mono text-white/20 italic">
-                          Sample view (Top 5 rows only)
+                          Showing first 5 rows (Scroll right for all columns) →
                         </div>
                       </div>
                     </motion.div>
